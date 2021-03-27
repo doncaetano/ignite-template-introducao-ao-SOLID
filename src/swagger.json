@@ -1,0 +1,55 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Atlas",
+    "description": "This is a documentation about Atlas API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create user",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      },
+      "get": {
+        "tags": ["User"],
+        "summary": "List user",
+        "description": "List all users",
+        "responses": {
+          "200": {
+            "description": "Ok"
+          },
+          "400": {
+            "description": "Error"
+          }
+        }
+      }
+    }
+  }
+}
